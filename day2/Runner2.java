@@ -44,7 +44,7 @@ public class Runner2 {
 			System.out.println("Found " + countDouble + " double lettered words and " + countTriple + " triple lettered words");
 			System.out.println("Checksum is then " + countDouble * countTriple);
 		}
-		System.out.println(System.currentTimeMillis()-time);
+		System.out.println("Runtime at the end of part 1:\t" + (System.currentTimeMillis()-time) + " ms");
 		System.out.println("Doing part 2");
 		boolean foundIt = false;
 		int charPosition = 0;
@@ -61,7 +61,7 @@ public class Runner2 {
 					sb2.deleteCharAt(charPosition);
 					word2 = sb2.toString();
 					if(word.equals(word2)){
-						System.out.println("Found the words");
+						System.out.println("Found the words:");
 						foundIt = true;
 					}
 				}
@@ -72,7 +72,7 @@ public class Runner2 {
 		}while(!foundIt);
 		System.out.println(word);
 
-		System.out.println(System.currentTimeMillis()-time);
+		System.out.println("Final runtime:\t" + (System.currentTimeMillis()-time) + " ms");
 	}
 }
 
