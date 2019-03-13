@@ -32,5 +32,26 @@ public class IO {
         }
 		return array;
 	}
+	
+	public static String[] readStringText(String Stringpath) throws IOException{
+		File file = new File(Stringpath);
+		if(!file.exists()){
+			throw new IOException("File not found");
+		}
+		ArrayList<String> list = new ArrayList<String>();
+		FileReader fr = new FileReader(file);
+        BufferedReader br = new BufferedReader(fr);
+        String line;
+        while((line = br.readLine()) != null){
+            list.add(line);
+        }
+        br.close();
+        fr.close();
+        String[] array = new String[list.size()];
+        for(int i=0; i<list.size();i++){
+        	array[i] = list.get(i);
+        }
+		return array;
+	}
 
 }
